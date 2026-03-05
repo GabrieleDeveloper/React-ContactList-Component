@@ -1,0 +1,7 @@
+@function fluid($min, $max, $min-vw: 320, $max-vw: 1200) {
+    @return clamp(
+        #{$min}px,
+        calc(#{$min}px + (#{$max} - #{$min}) * ((100vw - #{$min-vw}px) / (#{$max-vw} - #{$min-vw}))),
+        #{$max}px
+    );
+}

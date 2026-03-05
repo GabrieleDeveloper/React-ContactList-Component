@@ -1,0 +1,88 @@
+
+/* === DESIGN SYSTEM === */
+
+/* === GREY SCALE === */
+$color-grey-100: #f3f3f3;
+$color-grey-200: #ebebeb;
+$color-grey-300: #e0e0e0;
+$color-grey-400: #cccccc;
+$color-grey-500: #999999;
+$color-grey-600: #666666;
+$color-grey-700: #4d4d4d;
+$color-grey-800: #262626;
+$color-grey-900: #050505;
+$color-grey-1000: #000000;
+
+// === OPACITY UTILITIES ===
+$opacity-10: 0.1;
+$opacity-25: 0.25;
+$opacity-50: 0.5;
+$opacity-75: 0.75;
+
+/* === SPACING SCALE === */
+$space-2xs: 4px;   // micro gap — icona/testo, linee sottili
+$space-xs: 8px;    // piccoli padding interni
+$space-sm: 12px;   // spazi tra label e input
+$space-md: 16px;   // spazio medio — contenuti vicini
+$space-lg: 24px;   // sezioni o card padding
+$space-xl: 32px;   // separazione tra componenti
+$space-2xl: 48px;  // grandi sezioni / margini esterni
+$space-3xl: 64px;  // layout spacing — distanze macro
+$space-4xl: 90px;  // layout spacing - distanze macro +
+$space-5xl: 150px;
+$space-side-md: 200px; // Spacing laterale della pagina
+
+/* === FONT SIZES === */
+$font-size-2xs: 16px; 
+$font-size-xs: 22px;    // 12px — caption, label secondaria
+$font-size-sm: 30px;   // 14px — testo secondario
+$font-size-md: 38px;      // 16px — testo base
+$font-size-lg: 48px;    // 20px — sottotitolo
+$font-size-xl: 60px; // 24px — titolo sezione
+$font-size-2xl: 80px;  // 32px — heading principale
+$font-size-3xl: 150px;
+$font-size-4xl: 200px;    // 48px — hero / titoli grandi
+
+/* === FONT SIZES X FLUID === */
+
+$font-size-2xs-desktop: 16; $font-size-2xs-mobile: 12;
+$font-size-xs-desktop: 22; $font-size-xs-mobile: 16;   // 12px — caption, label secondaria
+$font-size-sm-desktop: 30; $font-size-sm-mobile: 16;  // 14px — testo secondario
+$font-size-md-desktop: 38; $font-size-md-mobile: 20;     // 16px — testo base
+$font-size-lg-desktop: 48; $font-size-lg-mobile: 24;   // 20px — sottotitolo
+$font-size-xl-desktop: 60; $font-size-xl-mobile: 28;   // 24px — titolo sezione
+$font-size-2xl-desktop: 80; $font-size-2xl-mobile: 32;    // 32px — heading principale
+$font-size-3xl-desktop: 150; $font-size-3xl-mobile: 40;
+$font-size-4xl-desktop: 200; $font-size-4xl-mobile: 50;    // 48px — hero / titoli grandi
+$font-size-5xl-desktop: 300; $font-size-5xl-mobile: 60;
+
+/* === FONT WEIGHTS === */
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+/* === BORDER RADIUS === */
+$radius-xs: 2px;
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$radius-xl: 20px;
+$radius-2xl: 32px;
+$radius-full: 9999px;
+
+
+.highligthText-ChatGPT{
+  background: linear-gradient(to right, #4C76FF, #00CDD4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+.highligthText{
+  font-weight: $font-weight-bold;
+  color: $color-grey-600;
+}

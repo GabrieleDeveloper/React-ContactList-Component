@@ -1,0 +1,26 @@
+@use "./functions.scss" as *;
+@use "./variables.scss" as v;
+
+$type-scale: (
+    2xs: (v.$font-size-2xs-mobile, v.$font-size-2xs-desktop, 1.4),
+    xs:  (v.$font-size-xs-mobile,  v.$font-size-xs-desktop, 1.4),
+    sm:  (v.$font-size-sm-mobile,  v.$font-size-sm-desktop, 1.5),
+    md:  (v.$font-size-md-mobile,  v.$font-size-md-desktop, 1.5),
+    lg:  (v.$font-size-lg-mobile,  v.$font-size-lg-desktop, 1.5),
+    xl:  (v.$font-size-xl-mobile,  v.$font-size-xl-desktop, 1.2),
+    2xl: (v.$font-size-2xl-mobile, v.$font-size-2xl-desktop, 1.2),
+    3xl: (v.$font-size-3xl-mobile, v.$font-size-3xl-desktop, 1.1),
+    4xl: (v.$font-size-4xl-mobile, v.$font-size-4xl-desktop, 1.1),
+    5xl: (v.$font-size-5xl-mobile, v.$font-size-5xl-desktop, 1.1),
+);
+
+@mixin type($name) {
+    $values: map-get($type-scale, $name);
+
+    @if $values == null {
+        @error "Tipo `#{$name}` non definito in $type-scale";
+    }
+
+    font-size: fluid(nth($values, 1), nth($values, 2));
+    line-height: nth($values, 3);
+}
