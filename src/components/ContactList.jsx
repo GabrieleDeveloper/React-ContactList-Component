@@ -82,12 +82,12 @@ function ContactList() {
     },[usersList])
 
 
-    // Filter the user while searching
+    // Filter the users by searching and filtering
     useEffect(() => {
         let result = [...usersList];
         if(searchTerm.trim() !== ''){
             result = result.filter((user) => {
-                let userCompleteName = user.name + user.surname;
+                let userCompleteName = `${user.name} ${user.surname}`;
                 return userCompleteName.toLowerCase().includes(searchTerm.toLowerCase())
             }
             );
