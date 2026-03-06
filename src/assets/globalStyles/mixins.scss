@@ -8,15 +8,15 @@
 }
 
 @mixin respond-down($size) {
-  $val: map.get($breakpoints, $size);      // es. 768px
-  $val-num: $val / 1px;                    // 768
-  @media (max-width: #{$val-num - 1}px) {  // interpolazione con #
+  $val: map.get($breakpoints, $size);      
+  $val-num: $val / 1px;                    
+  @media (max-width: #{$val-num - 1}px) { 
     @content;
   }
 }
 
 @mixin respond-between($min, $max) {
-  $min-val: map.get($breakpoints, $min) / 1px;  // numero puro
+  $min-val: map.get($breakpoints, $min) / 1px; 
   $max-val: map.get($breakpoints, $max) / 1px;
 
   @media (min-width: #{$min-val}px) and (max-width: #{$max-val - 1}px) {

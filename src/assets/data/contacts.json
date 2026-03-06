@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Marco",
+        "surname": "Rossi",
+        "job": "Programmer",
+        "active": true
+    },
+    {
+        "id": 2,
+        "name": "Luca",
+        "surname": "Collesi",
+        "job": "Manager",
+        "active": true
+    },
+    {
+        "id": 3,
+        "name": "Davide",
+        "surname": "Salvatore",
+        "job": "Lawyer",
+        "active": false
+    }
+]

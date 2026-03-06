@@ -11,21 +11,15 @@ $color-grey-600: #666666;
 $color-grey-700: #4d4d4d;
 $color-grey-800: #262626;
 $color-grey-900: #050505;
-$color-grey-1000: #000000;
-
-// === OPACITY UTILITIES ===
-$opacity-10: 0.1;
-$opacity-25: 0.25;
-$opacity-50: 0.5;
-$opacity-75: 0.75;
+$color-grey-1000: #15110E;
 
 /* === SPACING SCALE === */
 $space-2xs: 4px;   // micro gap — icona/testo, linee sottili
-$space-xs: 8px;    // piccoli padding interni
+$space-xs: 10px;    // piccoli padding interni
 $space-sm: 12px;   // spazi tra label e input
 $space-md: 16px;   // spazio medio — contenuti vicini
 $space-lg: 24px;   // sezioni o card padding
-$space-xl: 32px;   // separazione tra componenti
+$space-xl: 40px;   // separazione tra componenti
 $space-2xl: 48px;  // grandi sezioni / margini esterni
 $space-3xl: 64px;  // layout spacing — distanze macro
 $space-4xl: 90px;  // layout spacing - distanze macro +
@@ -34,8 +28,8 @@ $space-side-md: 200px; // Spacing laterale della pagina
 
 /* === FONT SIZES === */
 $font-size-2xs: 16px; 
-$font-size-xs: 22px;    // 12px — caption, label secondaria
-$font-size-sm: 30px;   // 14px — testo secondario
+$font-size-xs: 18px;    // 12px — caption, label secondaria
+$font-size-sm: 26px;   // 14px — testo secondario
 $font-size-md: 38px;      // 16px — testo base
 $font-size-lg: 48px;    // 20px — sottotitolo
 $font-size-xl: 60px; // 24px — titolo sezione
@@ -44,7 +38,6 @@ $font-size-3xl: 150px;
 $font-size-4xl: 200px;    // 48px — hero / titoli grandi
 
 /* === FONT SIZES X FLUID === */
-
 $font-size-2xs-desktop: 16; $font-size-2xs-mobile: 12;
 $font-size-xs-desktop: 22; $font-size-xs-mobile: 16;   // 12px — caption, label secondaria
 $font-size-sm-desktop: 30; $font-size-sm-mobile: 16;  // 14px — testo secondario
@@ -72,8 +65,7 @@ $radius-xl: 20px;
 $radius-2xl: 32px;
 $radius-full: 9999px;
 
-
-.highligthText-ChatGPT{
+.highligthText-IA{
   background: linear-gradient(to right, #4C76FF, #00CDD4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -5,9 +5,9 @@
 .listComponentContainer{
     height: 380px;
     width: 400px;
-    background-color: rgb(240, 240, 240);
-    border-radius: 26px;
-    box-shadow: 0px 0px 20px rgba(132, 132, 132, 0.463);
+    background-color: $color-grey-100;
+    border-radius: $radius-xl;
+    box-shadow: 0px 0px 20px rgba(132, 132, 132, 0.460);
     overflow: hidden;
     padding-bottom: $space-lg;
     position: relative;
@@ -18,6 +18,11 @@
 
     @include respond-down(desktop) {
         transform: scale(0.8);
+    }
+
+    .contentLayer{
+        position: relative;
+        z-index: 10;
     }
 
     .listComponent_header{
@@ -31,11 +36,10 @@
             font-size: $font-size-sm;
             font-weight: $font-weight-bold;
             color: $color-grey-800;
-            height: 50px;
             width: 100%;
             display: flex;
             align-items: end;
-            padding-left: 40px;
+            padding-left: $space-xl;
         }
 
         &_subtitle{
@@ -46,18 +50,18 @@
             height: auto;
             display: flex;
             align-items: center;
-            padding-left: 40px;
+            padding-left: $space-xl;
             margin-top: $space-xs;
             line-height: 0.9;
         }
 
         &_searchBar{
             display: flex;
-            width: calc(100% - 40px);
+            width: calc(100% - $space-xl);
             background-color: rgba(0, 0, 0, 0.05);
             border: 1px solid rgba(0, 0, 0, 0.02);
             height: 50px;
-            border-radius: 10px;
+            border-radius: $radius-md;
             overflow: hidden;
             margin-top: $space-sm;
 
@@ -81,8 +85,8 @@
         }
 
         &_filter{
-            height: 40px;
-            width: calc(100% - 40px);
+            height: $space-xl;
+            width: calc(100% - $space-xl);
             display: flex;
             align-items: end;
 
@@ -116,18 +120,17 @@
                 border-radius: $radius-md;
                 cursor: pointer;
                 position: relative;
-                background-color: $color-grey-700 !important;
+                background-color: $color-grey-700 !important; //!important cause it must overwrite an inline-style
             }
         }
     }
 
     .listComponent_body{
         height: calc(100% - 170px);
-        background-color: rgb(240, 240, 240);
+        background-color: $color-grey-100;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: $space-lg;
         overflow-y: scroll;
         scrollbar-width: none;
         -ms-overflow-style: none;
@@ -137,9 +140,12 @@
             display: none;
         }
 
+        &_ul{
+            width: calc(100% - $space-xl);
+        }
+
         &_userBox{
             height: 60px;
-            width: calc(100% - 40px);
             transition: 0.2s ease;
             cursor: pointer;
             border-radius: $radius-md;
@@ -148,11 +154,11 @@
             position: relative;
 
             &:hover{
-                background-color: #eaeaea;
+                background-color: $color-grey-200;
             }
 
             &:last-child{
-                margin-bottom: 30px;
+                margin-bottom: $space-lg;
             }
 
             &_activeUser{
@@ -172,7 +178,7 @@
 
             &_userName{
                 color: $color-grey-700;
-                margin-left: 10px;
+                margin-left: $space-sm;
                 font-size: 18px;
                 font-weight: $font-weight-medium;
             }
@@ -182,7 +188,7 @@
                 font-size: 15px;
                 background-color: red;
                 padding: 2px 7px 2px 7px;
-                border-radius: 6px;
+                border-radius: $radius-sm;
                 position: absolute;
                 z-index: 1;
             }
@@ -202,177 +208,8 @@
     }
 }
 
-
-
-.listComponent_dialogNewUser{
-    height: auto;
-    width: 350px;
-    background-color: rgb(240, 240, 240);
-    position: absolute;
-    transition: 0.5s ease;
-    padding: 25px;
-    border-radius: 26px;
-
-    &_header{
-        height: auto;
-        display: flex;
-        align-items: end;
-        margin-bottom: 15px;
-
-        &_container{
-            display: flex;
-            align-items: center;
-
-            &_title{
-                font-size: 26px;
-                font-weight: 700;
-                color: $color-grey-800;
-                padding-left: 10px;
-            }
-        }
-
-        
-    }
-
-    &_body{
-        height: auto;
-        width: 350px;
-        display: flex;
-        flex-direction: column;
-
-        &_textContainer{
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            
-            &_label{
-                color: #888888;
-                font-weight: 500;
-                font-size: 18px;
-            }
-
-            &_warningText{
-                font-size: 14px;
-                font-weight: 400;
-                font-style: italic;
-                color: #e63946;
-            }
-        }
-
-        &_inputs{
-            display: flex;
-            justify-content: space-between;
-            gap: 26px;
-            margin-bottom: 20px;
-
-            &_inputContainer{
-                
-                &_tag{
-                    color: #888888;
-                    font-weight: 500;
-                    font-size: 18px;
-                }
-
-                &_input{
-                    height: 46px;
-                    width: calc(100% - 13px); //100% meno la metà del gap di "inputs"
-                    background-color: rgba(0, 0, 0, 0.02);
-                    border: 1px solid rgba(0, 0, 0, 0.06);
-                    outline: none;
-                    padding-left: 10px;
-                    border-radius: 13px;
-                    font-size: 18px;
-                    color: #888888;
-                }
-            }
-        }
-
-        &_chooseJob{
-            display: flex;
-            align-items: center;
-            margin-bottom: 94px;
-            overflow-x: auto;
-            overflow-y: visible;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-
-            &_::-webkit-scrollbar{
-                display: none;
-            }
-        }
-    }
-
-    &_footer{
-        height: auto;
-        display: flex;
-
-        &_button{
-            height: 55px;
-            width: 100%;
-            background-color: rgb(36, 36, 36);
-            border-radius: 13px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-
-            &_text{
-                color: #f3f3f3;
-            }
-        }
-    }
-}
-
-.listComponent_newUserCheckedDialog{
-    background-color: #f3f3f3;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 90;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(100px);
-
-    &_container{
-        height: 200px;
-        width: 200px;
-        background-color: #f3f3f3;
-        border-radius: 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-
-        &_text{
-            color: #050505;
-        }
-    }
-}
-
-.dialogFullContacts{
-    height: 350px;
-    width: 100%;
-    background-color: #f3f3f3;
-    color: #050505;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 100000;
-
-    &_title{
-        color: #e63946;
-        font-size: 28px;
-        margin-top: 20px;
-    }
-
-    &_description{
-        color:  #e63946;
-        font-size: 18px;
-        font-weight: 400;
-    }
+.noContactsText{
+    font-weight: $font-weight-semibold;
+    color: $color-grey-600;
+    margin-top: 50px;
 }
