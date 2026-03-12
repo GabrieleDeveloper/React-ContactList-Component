@@ -1,5 +1,7 @@
 @use "./functions.scss" as *;
 @use "./variables.scss" as v;
+@use "sass:map";
+@use "sass:list";
 
 $type-scale: (
     2xs: (v.$font-size-2xs-mobile, v.$font-size-2xs-desktop, 1.4),
@@ -15,12 +17,12 @@ $type-scale: (
 );
 
 @mixin type($name) {
-    $values: map-get($type-scale, $name);
+    $values: map.get($type-scale, $name);
 
     @if $values == null {
         @error "Tipo `#{$name}` non definito in $type-scale";
     }
 
-    font-size: fluid(nth($values, 1), nth($values, 2));
-    line-height: nth($values, 3);
+    font-size: fluid(list.nth($values, 1), list.nth($values, 2));
+    line-height: list.nth($values, 3);
 }

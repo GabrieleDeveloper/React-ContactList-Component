@@ -1,5 +1,6 @@
 @use "./breakpoints.scss" as *;
 @use "sass:map";
+@use "sass:math";
 
 @mixin respond-up($size) {
   @media (min-width: map.get($breakpoints, $size)) {
@@ -8,26 +9,26 @@
 }
 
 @mixin respond-down($size) {
-  $val: map.get($breakpoints, $size);      
-  $val-num: $val / 1px;                    
-  @media (max-width: #{$val-num - 1}px) { 
+  $val: map.get($breakpoints, $size);
+  $val-num: math.div($val, 1px);
+
+  @media (max-width: #{$val-num - 1}px) {
     @content;
   }
 }
 
 @mixin respond-between($min, $max) {
-  $min-val: map.get($breakpoints, $min) / 1px; 
-  $max-val: map.get($breakpoints, $max) / 1px;
+  $min-val: math.div(map.get($breakpoints, $min), 1px);
+  $max-val: math.div(map.get($breakpoints, $max), 1px);
 
   @media (min-width: #{$min-val}px) and (max-width: #{$max-val - 1}px) {
     @content;
   }
 }
 
-
 @mixin respond-down-landscape($size) {
   $val: map.get($breakpoints, $size);
-  $val-num: $val / 1px;
+  $val-num: math.div($val, 1px);
 
   @media (max-width: #{$val-num - 1}px) and (orientation: landscape) {
     @content;
